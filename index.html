@@ -12,23 +12,33 @@
       <form action="" novalidate>
         <div class="form-row">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" />
+          <input type="email" id="email" name="email" required />
+          <span class="error" id="email-error"></span>
         </div>
         <div class="form-row">
           <label for="country">Country:</label>
-          <input type="text" id="country" name="country" />
+          <input type="text" id="country" name="country" required />
+          <span class="error" id="country-error"></span>
         </div>
         <div class="form-row">
           <label for="post-code">Post-Code:</label>
-          <input type="text" id="post-code" name="post-code" />
+          <input type="text" id="post-code" name="post-code" required />
+          <span class="error" id="post-code-error"></span>
         </div>
         <div class="form-row">
           <label for="password">Password:</label>
-          <input type="password" id="password" name="password" />
+          <input type="password" id="password" name="password" required />
+          <span class="error" id="password-error"></span>
         </div>
         <div class="form-row">
           <label for="password-verify">Confirm Password:</label>
-          <input type="password" id="password-verify" name="password-verify" />
+          <input
+            type="password"
+            id="password-verify"
+            name="password-verify"
+            required
+          />
+          <span class="error" id="password-verify-error"></span>
         </div>
         <input type="submit" name="" id="form-submit" />
       </form>
