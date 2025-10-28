@@ -1,6 +1,30 @@
+function getCountries() {
+  fetch("https://restcountries.com/v3.1/all?fields=name")
+    .then((res) => res.json())
+    .then((data) => {
+      const select = document.getElementById("country");
+      const countries = data.sort((a, b) =>
+        a.name.common.localeCompare(b.name.common)
+      );
+      countries.forEach((country) => {
+        const option = document.createElement("option");
+        option.textContent = country.name.common;
+        select.appendChild(option);
+      });
+    });
+}
+function getCountryCode(country) {
+  fetch(`https://restcountries.com/v3.1/name/${country.toLowerCase()}`)
+    .then((res) => res.json())
+    .then(([data]) => {
+      let countryCode = data.cca2;
+      console.log(countryCode);
+    });
+}
+
 function validateForm() {
   const form = document.querySelector("form");
-  const formInputs = document.querySelectorAll("form input");
+  const formInputs = document.querySelectorAll(".form-field");
   let targetInput;
   //   const formInput = document.querySelectorAll("form input");
   form.addEventListener("input", (e) => {
@@ -26,4 +50,5 @@ function validateForm() {
     }
   }
 }
+getCountries();
 validateForm();
