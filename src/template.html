@@ -46,9 +46,16 @@
             type="password"
             id="password"
             name="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$"
             required
           />
-          <span class="error" id="password-error"></span>
+          <ul id="password-requirements">
+            <li id="length">At least 12 characters.</li>
+            <li id="lowercase">At least 1 lowercase letter.</li>
+            <li id="uppercase">At least 1 uppercase letter.</li>
+            <li id="special">At least 1 special character.</li>
+            <li id="number">At least 1 number.</li>
+          </ul>
         </div>
         <div class="form-row">
           <label for="password-verify">Confirm Password:</label>

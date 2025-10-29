@@ -7,16 +7,16 @@
 }
 
 form {
-  width: 50vw;
+  width: 55vw;
   display: flex;
   flex-direction: column;
 }
 .form-row {
   display: grid;
   grid-template-columns: 30% 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1.2rem 1fr;
   gap: 5%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .form-row label {
   grid-column: 1/2;
@@ -24,8 +24,21 @@ form {
 .form-row input {
   grid-column: 2/3;
 }
+.form-row input:user-invalid {
+  border-color: red;
+}
 .error {
   grid-column: 2/3;
   grid-row: 2/3;
+  color: red;
+}
+#password-requirements {
+  grid-column: 2/3;
+}
+
+#password-requirements li.valid {
+  color: lightgreen;
+}
+#password-requirements li.invalid {
   color: red;
 }
